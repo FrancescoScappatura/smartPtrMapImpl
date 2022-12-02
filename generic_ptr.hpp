@@ -53,8 +53,9 @@ class generic_smart_pointer
     {
         if (occ_shared[this->raw_pointer_]==0 && occ_unique[this->raw_pointer_]==false)
         {
-          delete raw_pointer_; 
-          //TBD remove this. How can we solve?
+          delete (int*)raw_pointer_; 
+          //TBD remove this!. Just a tmp sol for avoid free void*
+          // How can this be solved?
           //Using template class we loos univoquicity because it
           //will lead to multiple maps
         }
